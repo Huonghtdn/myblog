@@ -23,11 +23,12 @@ $post->id = $data->id;
 $post->title = $data->title;
 $post->body = $data->body;
 $post->author = $data->author;
+$post->image = $data->image;
 $post->category_id = $data->category_id;
 
 if($post->update()){
     echo json_encode(
-        array('Message'=>'Post Updated')
+        array('Message'=>'Post '.$post->title.' Updated')
     );
 }else{
     echo json_encode(

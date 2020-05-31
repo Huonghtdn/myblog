@@ -23,6 +23,8 @@ $post_arr = array(
     'id'=>$post->id,
     'title'=>$post->title,
     'author' =>$post->author,
+    'image' =>$post->image,
+    'create_at' =>$post->create_at,
     'category_id'=>$post->category_id,
     'category_name'=>$post->category_name
 );

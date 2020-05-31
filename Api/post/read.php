@@ -17,7 +17,7 @@ $result = $post->read();
 $num = $result->rowCount();
 if($num >0){
     //post array
-    $posts_arr = array();
+    $posts_arr["post"] = array();
     //$posts_arr['data'] = array();
 
     while($row = $result->fetch(PDO:: FETCH_ASSOC)){
@@ -27,12 +27,14 @@ if($num >0){
             'title'=>$title,
             'body'=>html_entity_decode($body),
             'author' =>$author,
+            'image' =>$image,
+            'create_at'=>$create_at,
             'category_id'=>$category_id,
             'category_name'=>$category_name
         );
 
         //push to 'data'
-        array_push($posts_arr, $post_item);
+        array_push($posts_arr["post"], $post_item);
     }
     echo json_encode($posts_arr);
 }else{
