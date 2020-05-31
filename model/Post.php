@@ -38,6 +38,7 @@ class Post{
          $stmt->bindParam(1, $this->id);
          $stmt->execute();
          $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
          $this->title = $row['title'];
          $this->body = $row['body'];
          $this->author = $row['author'];
@@ -46,7 +47,7 @@ class Post{
          $this->category_id = $row['category_id'];
          $this->category_name = $row['category_name'];
 
-         return $stmt;
+        return $stmt;
     }
 
     //create post

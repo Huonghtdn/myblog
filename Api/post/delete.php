@@ -17,6 +17,8 @@ $db = $database->connect();
 $post = new Post($db);
 $data = json_decode(file_get_contents("php://input"));
 
+$post->id = $data->id;
+
 if($post->delete()){
     echo json_encode(
         array('Message'=>'Post Deleted')
