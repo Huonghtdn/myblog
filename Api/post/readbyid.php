@@ -17,7 +17,7 @@ $post = new Post($db);
 $post->id = isset($_GET['id']) ? $_GET['id']: die();
 
 //get post
-$post->single_read();
+$post->readById();
 //create array
 $post_arr = array(
     'id'=>$post->id,
