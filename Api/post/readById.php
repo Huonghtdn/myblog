@@ -24,9 +24,10 @@ $post_arr = array(
     'title'=>$post->title,
     'author' =>$post->author,
     'image' =>$post->image,
-    'create_at' =>$post->create_at,
+    'created_at' =>$post->created_at,
     'category_id'=>$post->category_id,
-    'category_name'=>$post->category_name
+    'category_name'=>$post->category_name,
+    'link'=> "/posts/".$post->id
 );
 //make json
 print_r(json_encode($post_arr));

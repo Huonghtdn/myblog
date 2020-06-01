@@ -28,7 +28,7 @@ if($num >0){
             'body'=>html_entity_decode($body),
             'author' =>$author,
             'image' =>$image,
-            'create_at'=>$create_at,
+            'created_at'=>$created_at,
             'category_id'=>$category_id,
             'category_name'=>$category_name
         );
