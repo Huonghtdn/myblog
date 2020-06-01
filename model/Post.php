@@ -26,7 +26,7 @@ class Post{
         return $stmt;
     }
 
-    public function single_read(){
+    public function readById(){
         $query ="SELECT c.name as category_name, p.id,
          p.category_id, p.title, p.body, p.author, p.image, p.created_at 
          FROM " .$this->table. " p 
