@@ -24,12 +24,21 @@ $post->title = $data->title;
 $post->body = $data->body;
 $post->author = $data->author;
 $post->image = $data->image;
+//$post->created_at = $data->created_at;
 $post->category_id = $data->category_id;
 
 if($post->update()){
-    echo json_encode(
-        array('Message'=>'Post '.$post->title.' Updated')
+    $post_arr = array(
+        'id'=>$post->id,
+        'title'=>$post->title,
+        'author' =>$post->author,
+        'image' =>$post->image,
+        //'created_at'=>$post->created_at,
+        'category_id'=>$post->category_id,
+        'link'=> "/posts/".$post->id
     );
+    //make json
+    print_r(json_encode($post_arr));
 }else{
     echo json_encode(
         array('message'=>'Post Not Updated')

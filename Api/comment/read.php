@@ -16,8 +16,8 @@ $comment = new Comment($db);
 $comment->post_id = isset($_GET['post_id']) ? $_GET['post_id']: die();
 
 $result = $comment->read();
-$num = $result->rowCount();
-if($num >0){
+//$num = $result->rowCount();
+if($result!=null){
     //post array
     $comments_arr["comment"] = array();
 
@@ -28,7 +28,8 @@ if($num >0){
             'body'=>html_entity_decode($body_comment),
             'author' =>$author_comment,
             'comment_at'=>$comment_at,
-            'post_id'=>$post_id
+            'post_id'=>$post_id,
+            'link'=>'/comment/'.$id
         );
 
         //push to 'comment'

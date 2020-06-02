@@ -25,6 +25,7 @@ $comment_arr = array(
     'author_comment' =>$comment->author_comment,
     'comment_at' =>$comment->comment_at,
     'post_id'=>$comment->post_id,
+    'link'=>'/comment/'.$comment->id
 );
 //make json
 print_r(json_encode($comment_arr));

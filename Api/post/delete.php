@@ -21,7 +21,8 @@ $post->id = $data->id;
 
 if($post->delete()){
     echo json_encode(
-        array('Message'=>'Post Deleted')
+        array('Message'=>'True',
+                'Delete_id'=>$post->id)
     );
 }else{
     echo json_encode(

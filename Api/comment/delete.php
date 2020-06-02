@@ -21,7 +21,8 @@ $comment->id = $data->id;
 
 if($comment->delete()){
     echo json_encode(
-        array('Message'=>'Comment Deleted')
+        array('Message'=>'Comment Deleted',
+                'Delete_id'=>$comment->id)
     );
 }else{
     echo json_encode(

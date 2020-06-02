@@ -30,7 +30,8 @@ if($num >0){
             'image' =>$image,
             'created_at'=>$created_at,
             'category_id'=>$category_id,
-            'category_name'=>$category_name
+            'category_name'=>$category_name,
+            'link'=>"/posts/".$id
         );
 
         //push to 'data'

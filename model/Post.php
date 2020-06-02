@@ -63,14 +63,12 @@ class Post{
          $this->body = htmlspecialchars(strip_tags($this->body));
          $this->author = htmlspecialchars(strip_tags($this->author));
          $this->image = htmlspecialchars(strip_tags($this->image));
-         //$this->create_at = htmlspecialchars(strip_tags($this->create_at));
          $this->category_id = htmlspecialchars(strip_tags($this->category_id));
        
          $stmt->bindParam(':title', $this->title);
          $stmt->bindParam(':body', $this->body);
          $stmt->bindParam(':author', $this->author);
          $stmt->bindParam(':image', $this->image);
-         //$stmt->bindParam(':create_at', $this->create_at);
          $stmt->bindParam(':category_id', $this->category_id);
 
 
@@ -83,19 +81,20 @@ class Post{
     }
     //update
     public function update(){
-        $query = 'update '.$this->table.'
-                set title = :title,
-                body = :body,
-                author = :author,
-                image = :image,
-                category_id = :category_id
-                where id = :id';
+        $query = 'update '.$this->table.' 
+        set title = :title,
+            body = :body, author = :author, 
+            image = :image, created_at = :created_at, 
+            category_id = :category_id ';
+       'where id = :id';
+
          $stmt = $this->conn->prepare($query);
 
          $this->title = htmlspecialchars(strip_tags($this->title));
          $this->body = htmlspecialchars(strip_tags($this->body));
          $this->author = htmlspecialchars(strip_tags($this->author));
          $this->image = htmlspecialchars(strip_tags($this->image));
+         $this->created_at = htmlspecialchars(strip_tags($this->created_at));
          $this->category_id = htmlspecialchars(strip_tags($this->category_id));
          $this->id = htmlspecialchars(strip_tags($this->id));
        
@@ -103,6 +102,7 @@ class Post{
          $stmt->bindParam(':body', $this->body);
          $stmt->bindParam(':author', $this->author);
          $stmt->bindParam(':image', $this->image);
+         $stmt->bindParam(':created_at', $this->created_at);
          $stmt->bindParam(':category_id', $this->category_id);
          $stmt->bindParam(':id', $this->id);
 

@@ -18,18 +18,16 @@ $post = new Post($db);
 
 //get raw posted data
 $data = json_decode(file_get_contents("php://input"));
-//date_default_timezone_set('UTC');
 
 $post->title = $data->title;
 $post->body = $data->body;
 $post->author = $data->author;
 $post->image = $data->image;
-//$post->create_at = date('Y-m-d H:i:s');
 $post->category_id = $data->category_id;
 
 if($post->create()){
     echo json_encode(
-        array('Message'=>'Post '.$post->title. ' Created')
+        array('message'=>'Post '.$post->title.' Created')
     );
 }else{
     echo json_encode(
