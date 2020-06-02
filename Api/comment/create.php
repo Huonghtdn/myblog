@@ -29,7 +29,7 @@ if($comment->create()){
         array('Message'=>'Comment '.$comment->body_comment. ' Created')
     );
 }else{
-    echo json_encode(
+    echo json_encode(   
         array('message'=>'Comment Not Created')
     );
 }

@@ -22,11 +22,11 @@ class Comment{
          $stmt->execute();
          $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-         $this->id = $row['id'];
-         $this->body_comment = $row['body_comment'];
-         $this->author_comment = $row['author_comment'];
-         $this->comment_at = $row['comment_at'];
-         $this->post_id = $row['post_id'];
+        //  $this->id = $row['id'];
+        //  $this->body_comment = $row['body_comment'];
+        //  $this->author_comment = $row['author_comment'];
+        //  $this->comment_at = $row['comment_at'];
+        //  $this->post_id = $row['post_id'];
 
         return $stmt;
     }

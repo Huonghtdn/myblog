@@ -16,8 +16,9 @@ $comment = new Comment($db);
 $comment->post_id = isset($_GET['post_id']) ? $_GET['post_id']: die();
 
 $result = $comment->read();
-//$num = $result->rowCount();
-if($result!=null){
+$num = $result->rowCount();
+
+if($num>0){
     //post array
     $comments_arr["comment"] = array();
 
